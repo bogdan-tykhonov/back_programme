@@ -1,0 +1,173 @@
+@media(max-width:1100px){
+    .comments .comment-back {
+        left: auto;
+        right: -200px;
+    }
+    .about .container {
+        .info {
+            width: 50%;
+            
+        }
+        .img-block{
+            margin-left: 50px;
+        }
+        .owner{
+            width: 680px;
+            right: -80px;
+            top: 0px;
+        }
+    }
+    .header-img {
+        z-index: -1;
+        opacity: 0.2;
+    }
+    .main-form .form-wrapper {
+        padding: 30px 30px;
+        width: 90%;
+        form{
+            width: 50%;
+            input{
+                width: 80%;
+            }
+        }
+        .form-img{
+            width: 50%;
+        }
+    }
+}
+@media(max-width:876px){
+    footer{
+        img{
+            margin: 0 30px;
+        }
+    }
+    .you-get {
+        h1{
+            width: 100%;
+            text-align: center;
+        }
+        img{
+            width: 30%;
+        }
+    }
+    .about{
+        padding-bottom: 0px;
+        .container{
+            flex-direction: column;
+            .info{
+                width: 100%;
+                max-width: 100%;
+            }
+            .owner{
+                min-width: 500px;
+                position: initial;
+            }
+            .img-block{
+                height: 650px;
+                margin-left: 0px;
+                .owner{
+                    width: 100%;
+                }
+            }
+            .img-block .numbers{
+                position: relative;
+                bottom: 200px;
+                margin-right: 0px;
+                justify-content: space-around;
+                
+                margin-top: 0px;
+                .num-block{
+                    text-align: center;
+                }
+            }
+            
+        }
+    }
+}
+
+@media(max-width:768px){
+    .main-form .form-wrapper{
+        #left-btm-corner, #right-btm-corner, #right-top-corner{
+            display: none;
+        }
+    }
+    .exercise-time .wrapper {
+        flex-direction: column;
+        align-items: center;
+        .text-block{
+            &:first-child{
+                margin-bottom: 50px;
+            }
+        }
+    }
+    .you-get {
+        .wrapper{
+            flex-direction: column;
+            p{
+                text-align: start;
+                justify-content: flex-start;
+                &::after{
+                    display: none;
+                }
+                &::before{
+                    margin-right: 13px;
+    content: url(/assets/img/planet.png);
+                }
+            }
+        }
+        img {
+            margin: auto;
+            margin-bottom: 50px;
+        }
+    }
+    header .header-info #triangle1{
+        top: 500px;
+    }
+    footer{
+        padding: 30px 0;
+        .container{
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            img{
+                margin: 30px 0;
+            }
+            .footer-nav{
+                text-align: start;
+                padding: 0px;
+            }
+        }
+    }
+}
+@media(max-width:576px){
+    .you-get img {
+        width: 50%;
+    }
+    header .header-info #triangle1{
+        top: 600px;
+    }
+    .you-get{
+        margin-top: 150px;
+    }
+    .header-img {
+        height: 600px;
+    }
+    header .header-info .container .wrapper{
+        width: 100%;
+    }
+    .main-form .form-wrapper{
+        width: 85%;
+        flex-direction: column;
+        form{
+            width: 100%;
+            margin-bottom: 50px;
+            input{
+                width: 90%;
+                
+            }
+            button{
+                width: 100%;
+            }
+        }
+
+    }
+}
