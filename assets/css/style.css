@@ -194,7 +194,7 @@ header .header-info #triangle1 {
 
 .you-get .wrapper p::after {
   margin-left: 13px;
-  content: url("assets/img/planet.png");
+  content: url("../img/planet.png");
 }
 
 .you-get .wrapper p:first-child {

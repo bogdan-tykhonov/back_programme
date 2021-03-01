@@ -155,7 +155,7 @@ header{
             text-transform: uppercase;
             &::after{
                 margin-left: 13px;
-                content: url('assets/img/planet.png');
+                content: url('../img/planet.png');
 
             }
             &:first-child{
