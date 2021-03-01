@@ -86,6 +86,41 @@
 }
 
 @media(max-width:768px){
+    .exercise-time .wrapper .text-block{
+        width: 240px;
+        height: 140px;
+        h1{
+            font-size: 60px;
+            span{
+                font-size: 40px;
+            }
+        }
+        p{
+            font-size: 24px;
+        }
+    }
+    .questions .question {
+        .answer{
+            p, li{
+                font-size: 16px;
+            }
+        }
+        .wrapper h3{
+            font-size: 20px;
+        }
+    }
+    .questions .question .wrapper h1{
+        font-size: 50px;
+    }
+    .questions .question .answer{
+        p, ul{
+            width: 100%;
+        }
+    }
+    header .header-info #triangle1{
+        width: 50%;
+        top: 800px;
+    }
     .main-form .form-wrapper{
         #left-btm-corner, #right-btm-corner, #right-top-corner{
             display: none;
@@ -120,9 +155,7 @@
             margin-bottom: 50px;
         }
     }
-    header .header-info #triangle1{
-        top: 500px;
-    }
+   
     footer{
         padding: 30px 0;
         .container{
@@ -139,12 +172,40 @@
     }
 }
 @media(max-width:576px){
+    .about .container .img-block {
+        height: 450px;
+    }
+    .about .container .img-block .numbers {
+        left: -30px;
+        width: 350px;
+        position: relative;
+        bottom: 250px;
+        margin: auto;
+        h1{
+            font-size: 40px;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+    
+    
+    .about .container .owner {
+        position: relative;
+        right: 30px;
+        top: -50px;
+    }
+    .main-form {
+        margin-top: 250px;
+    }
+    .exercise-time .parallax-group2{
+        bottom: -500px;
+    };
+
     .you-get img {
         width: 50%;
     }
-    header .header-info #triangle1{
-        top: 600px;
-    }
+   
     .you-get{
         margin-top: 150px;
     }
