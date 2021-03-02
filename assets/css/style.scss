@@ -600,3 +600,106 @@ footer{
     overflow: hidden;
     transition: $standart;
 }
+.special-propose_wrapper{
+    display: none;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+   
+    justify-content: center;
+    align-items: center;
+    .special-propose{
+        width: 450px;
+        color: #1F1F1F;
+        background-color: white;
+        padding: 35px 20px;
+        position: relative;
+        padding-bottom: 30px;
+        hr{
+            width: 100%;
+            height: 1px;
+            background-color: #232323;
+            width: 488px;
+            position: relative;
+            left: -20px;
+        }
+        img{
+            margin-bottom: 20px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            
+        }
+        h1{
+            transition: $standart;
+            font-family: $radio;
+            font-weight: 900;
+            font-size: 32px;
+            margin: 0px;
+            &:first-child{
+                margin-bottom: 25px;
+            }
+        }
+        .proposition{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            &:hover h1{
+                color: green;
+            }
+            .text-block{
+                max-width: 280px;
+            }
+            h2{
+                font-size: 19px;
+                font-family: "Montserrat";
+                font-weight: 600;
+            }
+            p{
+                font-family: "Montserrat";
+                font-size: 22px;
+                font-weight: 400;
+                span{
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
+            h1{
+                font-weight: 200;
+                font-family: "Montserrat";
+                font-size: 90px;
+            }
+        }
+        .info{
+            margin-top: 30px;
+            max-width: 220px;
+            h2{
+                font-weight: 400;
+                font-family: "Montserrat";
+                font-size: 17px;
+            }
+            p{
+                font-weight: 200;
+                font-family: "Montserrat";
+                font-size: 13px;
+            }
+        }
+        button{
+            background-color: $yellow;
+            color: #1F1F1F;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-family: $rubik;
+            font-weight: 300;
+            border-radius: 5px;
+            margin-top: 30px;
+            transition: $standart;
+            &:hover{
+                background-color: $yellowD;
+            }
+        }
+    }
+}

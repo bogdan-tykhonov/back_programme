@@ -144,20 +144,51 @@ $('a[href*=\\#]').on('click', function(event){
       }
     };
 
-    if(errors.length > 0) e.preventDefault();
+    if(errors.length > 0) {
+      e.preventDefault();
+      return;
+    };
+
+    const dataPropose = this.getAttribute('data-propose');
     
-    
+    if(dataPropose == "false"){
+      e.preventDefault();
+      document.querySelector('.main-form .special-propose_wrapper').style.display = 'flex';
+      document.querySelector('.special-propose .proposition').addEventListener('click', function(){
+        this.setAttribute('data-propose', 'true');
+        liqpayData();
+        $('#main-form').trigger('submit');
+      });
+      document.querySelector('.special-propose button').addEventListener('click', function(){
+        this.closest('.special-propose_wrapper').style.display = 'none';
+      });
+    };
   };
 
-  function dataInit(){
-    const json_string = {"public_key":"i73112537030","version":"3","action":"pay","amount":"3","currency":"UAH","description":"test","order_id":"000001"};
-    const data = 'InB1YmxpY19rZXkiOiJpNzMxMTI1MzcwMzAiLCJ2ZXJzaW9uIjoiMyIsImFjdGlvbiI6InBheSIsImFtb3VudCI6IjMiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoidGVzdCIsIm9yZGVyX2lkIjoiMDAwMDAxIn0=';
+  async function sha1(str) {
+    const buf = Uint8Array.from(unescape(encodeURIComponent(str)), c=>c.charCodeAt(0)).buffer;
+    const digest = await crypto.subtle.digest('SHA-1', buf);
+    const raw = String.fromCharCode.apply(null, new Uint8Array(digest));
+    return btoa(raw); // base64
+}
+
+  function liqpayData(){
+    const json_string = {"public_key":"i73112537030","version":"3","action":"pay","amount":"500","currency":"UAH","description":'Доступ до відео та КОМПЛЕКС ОЗДОРОВЧОЇ ГІМНАСТИКИ - 9 СИЛ',"order_id":"000001", 'language': 'ru'};
+    const data = window.btoa(unescape(encodeURIComponent(JSON.stringify(json_string))));
     const privat = 'Su7Huz8Ympwa7xyu7RFVfs868vKNbRrQzXTtwLHY';
     const sign_string = privat+data+privat;
-   // const signature = atob(sign_string);
-    console.log(sign_string);
+    let signature;
+     sha1(sign_string).then((signData) => {
+       signature = signData;
+       document.querySelector('#main-form input[name="data"]').value = data;
+      document.querySelector('#main-form input[name="signature"]').value = signature;
+      });
+    
+     
    };
 
-   dataInit();
+  liqpayData();
 
+
+  alert(navigator.userAgent);
 });
