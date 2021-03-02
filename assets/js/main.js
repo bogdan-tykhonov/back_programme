@@ -80,7 +80,7 @@ $('a[href*=\\#]').on('click', function(event){
     let newPOS = +currPos - slideOffset;
 
     $('.comments-slider').attr('data-pos' , newPOS);
-    
+
     if(newPOS == -slideOffset) {
         newPOS = slideOffset;
         $('.comments-slider').css('transform', `translateX(${newPOS}px)`);
@@ -114,7 +114,7 @@ $('a[href*=\\#]').on('click', function(event){
 
     if(curr){
       curr.classList.remove('active-dot');
-      curr.style.backgroundColor = '#232323';
+      curr.style.backgroundColor = window.innerWidth > 768 ? '#232323' : 'white';
       curr.style.transform = 'scale(1)';
     }
 
@@ -123,10 +123,29 @@ $('a[href*=\\#]').on('click', function(event){
     const activeSlide = $('.comments-slider .active');
     const pos = slides.indexOf(activeSlide[0]);
     dots[pos].classList.add('active-dot');
-    dots[pos].style.backgroundColor = 'white';
+    dots[pos].style.backgroundColor = window.innerWidth > 768 ? 'white' : '#FECE2F';
     dots[pos].style.transform = 'scale(1.2)';
   };
 
   activeDot();
 
-})
+  document.querySelector('#main-form').addEventListener('submit', submitForm);
+
+  function submitForm(e){
+    let errors  = [];
+    const inputs = this.querySelectorAll('input');
+    for(let input of inputs){
+      if(input.value.length == 0){
+        input.closest('.input-block').querySelector('.error').style.height = '20px';
+        errors.push(1);
+      }else{
+        input.closest('.input-block').querySelector('.error').style.height = '0px';
+      }
+      
+    };
+    if(errors.length != 0){
+      e.preventDefault();
+    }
+  }
+
+});

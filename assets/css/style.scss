@@ -591,3 +591,12 @@ footer{
         border-radius: 50%;
     }
 }
+.input-block .error{
+    color: red;
+    font-family: $rubik;
+    font-size: 16px;
+    margin-top: 5px;
+    height: 0px;
+    overflow: hidden;
+    transition: $standart;
+}

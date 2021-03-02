@@ -86,6 +86,15 @@
 }
 
 @media(max-width:768px){
+    .dots {
+        top: 450px;
+    }
+    .dots .dot{
+        background-color: white;
+    }
+    .comments .comment-back{
+        bottom: 0px;
+    }
     .comments .nav-btns{
         top: 230px;
     }
@@ -195,9 +204,7 @@
     header .header-info #triangle1 {
         top: 120vh;
     }
-    .header-img {
-        right: -200px;
-    }
+   
     header .header-info .container .wrapper {
         margin-top: 50%;
     }

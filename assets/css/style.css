@@ -792,4 +792,15 @@ footer .container .footer-nav a:hover {
   background-color: #232323;
   border-radius: 50%;
 }
+
+.input-block .error {
+  color: red;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 /*# sourceMappingURL=style.css.map */
