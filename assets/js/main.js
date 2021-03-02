@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-const slideOffset = 550;
+const slideOffset = window.innerWidth > 768 ? 550 : 405;
     
 
   function setHeightData(){

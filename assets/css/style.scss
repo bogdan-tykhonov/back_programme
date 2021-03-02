@@ -380,10 +380,10 @@ main{
             z-index: 100;
         }
         .prev{
-            margin-left: 320px;
+            margin-left: calc((100vw - 750px)/2);
         }
         .next{
-            margin-right: 300px;
+            margin-right: calc((100vw - 750px)/2);
         }
     }
     .container{
@@ -424,7 +424,7 @@ main{
         width: max-content;
         margin: auto;
         position: relative;
-        left: calc(-100vw / 14);
+        left: calc((-1665px + 100vw)/2);
         .comment{
             filter: blur(2px);
             transform: scale(0.7);

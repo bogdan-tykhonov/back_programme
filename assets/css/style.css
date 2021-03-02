@@ -494,11 +494,11 @@ main {
 }
 
 .comments .nav-btns .prev {
-  margin-left: 320px;
+  margin-left: calc((100vw - 750px)/2);
 }
 
 .comments .nav-btns .next {
-  margin-right: 300px;
+  margin-right: calc((100vw - 750px)/2);
 }
 
 .comments .container {
@@ -556,7 +556,7 @@ main {
   width: max-content;
   margin: auto;
   position: relative;
-  left: calc(-100vw / 14);
+  left: calc((-1665px + 100vw)/2);
 }
 
 .comments .comments-slider .comment {

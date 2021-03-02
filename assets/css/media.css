@@ -82,6 +82,24 @@
 }
 
 @media (max-width: 768px) {
+  .comments .nav-btns {
+    top: 230px;
+  }
+  .comments .comments-slider .comment .text-block {
+    padding: 0 30px;
+  }
+  .comments .nav-btns .prev {
+    margin-left: calc((100vw - 400px)/2);
+  }
+  .comments .nav-btns .next {
+    margin-right: calc((100vw - 400px)/2);
+  }
+  .comments .comments-slider {
+    left: calc((-1215px + 100vw)/2);
+  }
+  .comments .comments-slider .comment {
+    width: 320px;
+  }
   .exercise-time .wrapper .text-block {
     width: 240px;
     height: 140px;
@@ -171,6 +189,11 @@
 }
 
 @media (max-width: 576px) {
+  .comments .h1-wrapper h2 {
+    font-size: 80px;
+    top: -110px;
+    left: -70px;
+  }
   .about .container .img-block {
     height: 450px;
   }
