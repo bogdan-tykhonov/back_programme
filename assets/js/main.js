@@ -132,20 +132,32 @@ $('a[href*=\\#]').on('click', function(event){
   document.querySelector('#main-form').addEventListener('submit', submitForm);
 
   function submitForm(e){
-    let errors  = [];
-    const inputs = this.querySelectorAll('input');
-    for(let input of inputs){
+   
+      let errors  = [];
+      const inputs = this.querySelectorAll('.form-input');
+      for(let input of inputs){
       if(input.value.length == 0){
         input.closest('.input-block').querySelector('.error').style.height = '20px';
         errors.push(1);
       }else{
         input.closest('.input-block').querySelector('.error').style.height = '0px';
       }
-      
     };
-    if(errors.length != 0){
-      e.preventDefault();
-    }
-  }
+
+    if(errors.length > 0) e.preventDefault();
+    
+    
+  };
+
+  function dataInit(){
+    const json_string = {"public_key":"i73112537030","version":"3","action":"pay","amount":"3","currency":"UAH","description":"test","order_id":"000001"};
+    const data = 'InB1YmxpY19rZXkiOiJpNzMxMTI1MzcwMzAiLCJ2ZXJzaW9uIjoiMyIsImFjdGlvbiI6InBheSIsImFtb3VudCI6IjMiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoidGVzdCIsIm9yZGVyX2lkIjoiMDAwMDAxIn0=';
+    const privat = 'Su7Huz8Ympwa7xyu7RFVfs868vKNbRrQzXTtwLHY';
+    const sign_string = privat+data+privat;
+   // const signature = atob(sign_string);
+    console.log(sign_string);
+   };
+
+   dataInit();
 
 });
