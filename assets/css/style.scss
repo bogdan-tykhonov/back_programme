@@ -73,7 +73,7 @@ a{
     right: 0;
 }
 .container{
-    max-width: 1020px;
+    max-width: 1200px;
     width: 80%;
     margin: auto;
 }
@@ -237,6 +237,9 @@ border-radius: 3px;
         display: flex;
         align-items: center;
         padding: 65px 55px;
+        .input-block{
+            width: 100%;
+        }
         form{
             align-items: flex-start;
             display: flex;
@@ -701,5 +704,12 @@ footer{
                 background-color: $yellowD;
             }
         }
+    }
+}
+header a{
+    font-family: $rubik;
+    transition: $standart;
+    &:hover{
+        color: $yellow;
     }
 }

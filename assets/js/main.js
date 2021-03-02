@@ -190,5 +190,4 @@ $('a[href*=\\#]').on('click', function(event){
   liqpayData();
 
 
-  alert(navigator.userAgent);
 });

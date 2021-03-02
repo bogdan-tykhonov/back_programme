@@ -78,7 +78,7 @@ a {
 }
 
 .container {
-  max-width: 1020px;
+  max-width: 1200px;
   width: 80%;
   margin: auto;
 }
@@ -303,6 +303,10 @@ header .header-info #triangle1 {
       -ms-flex-align: center;
           align-items: center;
   padding: 65px 55px;
+}
+
+.main-form .form-wrapper .input-block {
+  width: 100%;
 }
 
 .main-form .form-wrapper form {
@@ -933,5 +937,15 @@ footer .container .footer-nav a:hover {
 
 .special-propose_wrapper .special-propose button:hover {
   background-color: #fac000;
+}
+
+header a {
+  font-family: "Rubik", sans-serif;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  color: #FECE2F;
 }
 /*# sourceMappingURL=style.css.map */

@@ -201,6 +201,12 @@
     }
 }
 @media(max-width:576px){
+    .special-propose_wrapper .special-propose {
+        width: 300px;
+        hr{
+            width: 335px;
+        }
+    }
     header .header-info #triangle1 {
         top: 120vh;
     }
