@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function(){
 const slideOffset = window.innerWidth > 768 ? 550 : 405;
     
+$('a[href*=\\#]').on('click', function(event){     
+  event.preventDefault();
+  $('html,body').animate({scrollTop:$(this.hash).offset().top - 100}, 500);
+});
 
   function setHeightData(){
     const questions = document.querySelectorAll('.question');
