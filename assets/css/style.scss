@@ -575,3 +575,19 @@ footer{
         }
     }
 }
+.dots{
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 400px;
+    justify-content: center;
+    display: flex;
+    .dot{
+        transition: $standart;
+        margin-right: 7px;
+        width: 11px;
+        height: 11px;
+        background-color:  #232323;
+        border-radius: 50%;
+    }
+}

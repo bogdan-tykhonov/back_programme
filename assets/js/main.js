@@ -37,6 +37,31 @@ $('a[href*=\\#]').on('click', function(event){
   document.querySelector('#next').addEventListener('click', sliderNext);
   document.querySelector('#prev').addEventListener('click', slidePrev);
 
+  function changeActiveSlide(side){
+        const currActive = $('.comments-slider .active');
+        let newActive;
+        if(side == 'right'){
+          newActive = $('.comments-slider .active').next();
+          $(newActive).css({'right':'0', 'z-index': '0'});
+        setTimeout(function(){
+            (newActive).css({"right":'initial'});
+        }, 600);
+        }else if(side == 'left'){
+          newActive = $('.comments-slider .active').prev();
+          $(newActive).css({"left":'0', 'z-index': '0'});
+        setTimeout(function(){
+            (newActive).css({"left":'initial'});
+        }, 600);
+        };
+
+        $(newActive).addClass('active');
+        $(currActive).removeClass('active');   
+        $(currActive).css('transform', 'scale(0.7)');
+        $(newActive).css('transform', 'scale(1)');
+        giveSlidesPosition();
+        activeDot();
+  }
+
   function sliderNext(){
       let max = $('.comments-slider .comment').length - 2;
       max = max * slideOffset;
@@ -45,26 +70,17 @@ $('a[href*=\\#]').on('click', function(event){
       const newPOS = +currPos+ slideOffset;
       $('.comments-slider').attr('data-pos' , newPOS);
       $('.comments-slider').css('transform', `translateX(-${newPOS}px)`);
-
-        const currActive = $('.comments-slider .active');
-        const newActive = $('.comments-slider .active').next();
-        $(newActive).addClass('active');
-        $(currActive).removeClass('active');
-        $(newActive).css({'right':'0', 'z-index': '0'});
-        setTimeout(function(){
-            (newActive).css({'right':'initial'});
-        }, 600);
-        $(currActive).css('transform', 'scale(0.7)');
-        $(newActive).css('transform', 'scale(1)');
-        giveSlidesPosition();
+      changeActiveSlide('right');
+        
   };
 
   function slidePrev(){
     const currPos = $('.comments-slider').attr('data-pos');
     if(currPos == -slideOffset) return;
     let newPOS = +currPos - slideOffset;
-    console.log(newPOS == -slideOffset);
+
     $('.comments-slider').attr('data-pos' , newPOS);
+    
     if(newPOS == -slideOffset) {
         newPOS = slideOffset;
         $('.comments-slider').css('transform', `translateX(${newPOS}px)`);
@@ -72,17 +88,7 @@ $('a[href*=\\#]').on('click', function(event){
         $('.comments-slider').css('transform', `translateX(-${newPOS}px)`);
     }
 
-      const currActive = $('.comments-slider .active');
-      const newActive = $('.comments-slider .active').prev();
-      $(newActive).addClass('active');
-      $(currActive).removeClass('active');
-      $(newActive).css({'left':'0', 'z-index': '0'});
-      setTimeout(function(){
-        (newActive).css({'left':'initial'});
-    }, 600);
-      $(currActive).css('transform', 'scale(0.7)');
-      $(newActive).css('transform', 'scale(1)');
-      giveSlidesPosition();
+    changeActiveSlide('left');
   }
 
   function giveSlidesPosition(){
@@ -91,5 +97,36 @@ $('a[href*=\\#]').on('click', function(event){
   };
 
   giveSlidesPosition();
+
+  function dotsInit(){
+    const slides = $('.comments-slider .comment');
+    for(let slide of slides){
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      document.querySelector('.dots').append(dot);
+    }
+  };
+
+  dotsInit();
+
+  function activeDot(){
+    const curr = document.querySelector('.dots .active-dot');
+
+    if(curr){
+      curr.classList.remove('active-dot');
+      curr.style.backgroundColor = '#232323';
+      curr.style.transform = 'scale(1)';
+    }
+
+    const slides = Array.from($('.comments-slider .comment'));
+    const dots = Array.from($('.dots .dot'));
+    const activeSlide = $('.comments-slider .active');
+    const pos = slides.indexOf(activeSlide[0]);
+    dots[pos].classList.add('active-dot');
+    dots[pos].style.backgroundColor = 'white';
+    dots[pos].style.transform = 'scale(1.2)';
+  };
+
+  activeDot();
 
 })

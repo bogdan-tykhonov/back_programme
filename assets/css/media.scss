@@ -192,6 +192,12 @@
     }
 }
 @media(max-width:576px){
+    header .header-info #triangle1 {
+        top: 120vh;
+    }
+    .header-img {
+        right: -200px;
+    }
     header .header-info .container .wrapper {
         margin-top: 50%;
     }
