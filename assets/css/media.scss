@@ -192,6 +192,15 @@
     }
 }
 @media(max-width:576px){
+    header .header-info .container .wrapper {
+        margin-top: 50%;
+    }
+    .header-img {
+        height: 100vh;
+    }
+    header{
+        height: 100vh;
+    }
     .comments .h1-wrapper h2{
         font-size: 80px;
     top: -110px;
@@ -231,12 +240,10 @@
         width: 50%;
     }
    
-    .you-get{
-        margin-top: 150px;
+    .you-get {
+        margin-top: 0px;
     }
-    .header-img {
-        height: 600px;
-    }
+    
     header .header-info .container .wrapper{
         width: 100%;
     }
