@@ -198,6 +198,9 @@
 }
 
 @media (max-width: 576px) {
+  .comments .comments-slider .comment img {
+    width: 60px;
+  }
   .special-propose_wrapper .special-propose {
     width: 300px;
   }

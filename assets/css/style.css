@@ -948,4 +948,8 @@ header a {
 header a:hover {
   color: #FECE2F;
 }
+
+.comments .comments-slider .comment img {
+  width: 90px;
+}
 /*# sourceMappingURL=style.css.map */
